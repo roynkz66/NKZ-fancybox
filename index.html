@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="./fancybox-master/dist/jquery.fancybox.min.css">
+  <!--<link rel="stylesheet" type="text/css" href="jquery.fancybox.min.css">-->
+<link href="/assets/index.593b805466cc896fa4c7.css" rel="stylesheet"></head>
+
+<body>
+  <!--<div class="elem">hello</div>-->
+  <div class="container">
+
+    <div>
+      <h1>website</h1>
+
+      <a id="test" href="javascript:;" class="btn btn-primary">Open demo</a>
+    </div>
+
+    <div>
+      <h1>Image</h1>
+
+               <!--data-fancynox 就是插件的element，可以set他的type-->
+               <!--data-caption 就是解释图片的element，会显示在modal的下面-->
+               <!--data-width和data-height就是modal里面的宽和高度-->
+      <a href="images/1.jpg" data-fancybox="images" data-caption="111111111111" data-width="1000" data-height="500">
+        <img src="images/1.jpg" alt="" />
+      </a>
+      <a href="images/2.jpg" data-fancybox="images" data-caption="2222222222" data-width="1000" data-height="500">
+        <img src="images/2.jpg" alt="" />
+      </a>
+      <a href="images/3.jpg" data-fancybox="images" data-caption="33333333333" data-width="1000" data-height="500">
+        <img src="images/3.jpg" alt="" />
+      </a>
+      <a href="images/4.jpg" data-fancybox="images" data-caption="444444444444" data-width="1000" data-height="500">
+        <img src="images/4.jpg" alt="" />
+      </a>
+      <a href="images/5.jpg" data-fancybox="images" data-caption="555555555555" data-width="1000" data-height="500">
+        <img src="images/5.jpg" alt="" />
+      </a>
+      <a href="images/1.jpg" data-fancybox="images" data-caption="666666666666666" data-width="1000" data-height="500">
+        <img src="images/1.jpg" alt="" />
+      </a>
+    </div>
+
+    <div>
+      <h1>video</h1>
+         <!--data-fancynox 就是插件的element-->
+      <a data-fancybox href="https://youtu.be/ZE-GjQy-PLc"><!--放video link-->
+        <img src="images/1.jpg" alt="" /><!--放图片-->
+      </a>
+      <a data-fancybox href="https://youtu.be/85ARmG9-Qy8">
+        <img src="images/2.jpg" alt="" />
+      </a>
+      <a data-fancybox href="https://youtu.be/iDCegwpnlbM">
+        <img src="images/3.jpg" alt="" />
+      </a>
+      <a data-fancybox href="https://youtu.be/aV5l1G_1hxY">
+        <img src="images/4.jpg" alt="" />
+      </a>
+
+    </div>
+
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="./fancybox-master/dist/jquery.fancybox.min.js"></script>
+
+
+<script type="text/javascript" src="/assets/runtime~index.ce06f2fbfc993bc80e28.bundle.js"></script><script type="text/javascript" src="/assets/index.e60a39a70ff0d15fd601.bundle.js"></script></body>
+<script>
+
+  //fancybox是一个modal box的概念，但是主要是展现图片和video
+
+  var fancyBox = $('[data-fancybox]');
+  //可以set它的配件
+  fancyBox.fancybox({
+    protect: true,
+    buttons: [
+      "zoom",
+      "share",
+      "slideShow",
+      "fullScreen",
+      "download",
+      "thumbs",
+      "close"
+    ]
+  });
+
+
+  $("#test").on('click', function () {
+   //我们可以set他的element
+    $.fancybox.open({
+      src: 'http://www.southern.edu.my/home.html',
+      type: 'iframe',
+      opts: {
+        afterShow: function (instance, current) {
+          console.info('done!');
+        }
+      }
+    });
+
+  });
+</script>
+
+</html>
